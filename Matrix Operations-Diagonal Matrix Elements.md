@@ -1,7 +1,8 @@
 # Matrix Operations-Diagonal Matrix Elements Printer 🧮
 
 This Python program reads a matrix of any size from the user and prints **only the diagonal elements**, leaving other elements blank in the output.
-
+## NAME : Shanmuga Vasanth M
+## REG NO: 212223040191
 ## 📌 Aim
 
 To write a Python program that prints only the diagonal elements of a given matrix.
@@ -18,8 +19,40 @@ To write a Python program that prints only the diagonal elements of a given matr
 6. Print a newline after each row.
 
 ## 🖥️ Program
-Add Code Here
+~~~c
+def read_matrix():
+    rows = int(input("Enter number of rows: "))
+    cols = int(input("Enter number of columns: "))
+    print(f"Enter elements row-wise ({rows} x {cols}):")
+    matrix = []
+    for i in range(rows):
+        row = list(map(int, input(f"Row {i + 1}: ").split()))
+        if len(row) != cols:
+            print("❌ Invalid number of columns. Please restart.")
+            exit()
+        matrix.append(row)
+    return matrix
+def print_diagonals(matrix):
+    rows = len(matrix)
+    cols = len(matrix[0])
+    print("\nDiagonal Elements:")
+    for i in range(rows):
+        for j in range(cols):
+            if i == j:
+                print(f"{matrix[i][j]:>4}", end=' ')
+            else:
+                print("    ", end=' ')
+        print()
+matrix = read_matrix()
+print("\nOriginal Matrix:")
+for row in matrix:
+    print(row)
+print_diagonals(matrix)
+~~~
 
 ### Output:
+![442492877-b01e879a-f8ea-4d57-8917-771888b5cad8](https://github.com/user-attachments/assets/f23b02b4-4afe-4f06-81a5-747911bd6686)
+
 
 ## Result
+Thus the program has been executed successfully.
